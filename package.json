@@ -1,0 +1,63 @@
+{
+  "name": "covid19_scenarios_api",
+  "version": "0.0.1",
+  "description": "covid19_scenarios_api",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "tsc-watch -p tsconfig.json --onSuccess \"node ./dist/index.js\" --compiler `which tsc`",
+    "build": "tsc",
+    "lint": "eslint --fix \"src/**\""
+  },
+  "dependencies": {
+    "@koa/cors": "2",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa__cors": "^3.0.1",
+    "@types/mathjs": "^6.0.4",
+    "dotenv": "^8.2.0",
+    "joi": "^14.3.1",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-logger": "2",
+    "koa-router": "^8.0.7",
+    "lodash": "^4.17.15",
+    "mathjs": "^6.6.2",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "uuid": "^7.0.2",
+    "winston": "^3.2.1",
+    "yargs": "^14.2.0",
+    "yup": "^0.28.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/joi": "^14.3.4",
+    "@types/koa": "^2.11.1",
+    "@types/koa-router": "^7.4.0",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^13.7.1",
+    "@types/node-fetch": "^2.5.2",
+    "@types/uuid": "^7.0.2",
+    "@types/winston": "^2.4.4",
+    "@types/yargs": "^13.0.3",
+    "@types/yup": "^0.26.33",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "tsc-watch": "^4.1.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.4.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
