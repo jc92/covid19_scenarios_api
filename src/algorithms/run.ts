@@ -1,6 +1,6 @@
 import * as math from 'mathjs';
 import { OneCountryAgeDistribution } from '../data/CountryAgeDistribution.types';
-import { collectTotals, evolve, getPopulationParams, initializePopulation } from './model';
+import { collectTotals, evolve, eulerStepsPerDay, getPopulationParams, initializePopulation } from './model';
 import { AllParamsFlat } from './types/Param.types';
 import { AlgorithmResult, SimulationTimePoint } from './types/Result.types';
 import { TimeSeries } from './types/TimeSeries.types';
@@ -118,9 +118,14 @@ export default async function run(
 
   function simulate(initialState: SimulationTimePoint, func: (x: number) => number) {
     const dynamics = [initialState];
-    while (dynamics[dynamics.length - 1].time < tMax) {
-      const pop = dynamics[dynamics.length - 1];
-      dynamics.push(evolve(pop, modelParams, func));
+    let currState = initialState;
+    let i = 0;
+    while (currState.time < tMax) {
+      currState = evolve(currState, modelParams, func);
+      i++;
+      if (i % eulerStepsPerDay == 0) {
+        dynamics.push(currState);
+      }
     }
 
     return collectTotals(dynamics);
