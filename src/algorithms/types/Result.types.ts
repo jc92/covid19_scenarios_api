@@ -1,6 +1,6 @@
 export interface InternalCurrentData {
   susceptible: Record<string, number>;
-  // TODO: i've changed this to number instead of number[], check it
+  // TODO: @bruno_rzn: i've changed this to number instead of number[], check it
   exposed: Record<string, number[]>;
   infectious: Record<string, number>;
   severe: Record<string, number>;

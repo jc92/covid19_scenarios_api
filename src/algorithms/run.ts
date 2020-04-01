@@ -60,7 +60,7 @@ export function interpolateTimeSeries(containment: TimeSeries): (t: Date) => num
     const A = math.matrix(Mtx);
     const x = math.multiply(math.inv(A), Vec);
 
-    // TODO: this is static cast is is valid ?
+    // TODO: @bruno_rzn: this is static cast is is valid ?
     return x.toArray() as Vector;
   };
 
