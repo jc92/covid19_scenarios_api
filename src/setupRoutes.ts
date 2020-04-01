@@ -2,12 +2,13 @@ import Koa from 'koa';
 import koaBody from 'koa-body';
 import health from './routes/health';
 import runSimulation from './routes/runSimulation';
+import { Context } from './types';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const router = require('koa-router')();
 
 export default function setupRoutes(app: Koa): void {
   router.get('/health', koaBody(), health);
-  router.get('/run', koaBody(), runSimulation);
+  router.get('/run', koaBody(), (ctx: Context) => runSimulation(ctx, true));
   app.use(router.routes());
 }
