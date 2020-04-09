@@ -3,7 +3,7 @@
     "target": "es2017",
     "module": "commonjs",
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "outDir": "./dist",
     "sourceMap": true,
     "strict": true,
@@ -20,6 +20,10 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "front",
+    "front/**/*.*",
+    "front/.generated",
+    "**/*.js"
   ]
 }
