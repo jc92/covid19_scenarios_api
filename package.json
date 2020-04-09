@@ -5,8 +5,9 @@
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/index.js",
-    "dev": "tsc-watch -p tsconfig.json --onSuccess \"node ./dist/index.js\" --compiler `which tsc`",
+    "start": "node ./dist/src/index.js",
+    "dev": "tsc-watch -p tsconfig.json --onSuccess \"node ./dist/src/index.js\" --compiler `which tsc`",
+    "update": "bash ./scripts/update.sh",
     "build": "tsc",
     "lint": "eslint --fix \"src/**.ts\""
   },
