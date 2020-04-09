@@ -20,5 +20,6 @@ error.log*
 
 .rpt2_cache
 dist
+front
 
 .eslintcache
