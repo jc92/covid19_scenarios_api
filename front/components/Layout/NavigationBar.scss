@@ -1,0 +1,12 @@
+.navbar {
+  .navbar-brand-image {
+    height: 35px;
+    padding: 0;
+  }
+}
+
+.navbar-scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
